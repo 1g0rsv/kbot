@@ -107,6 +107,8 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Printf("kbot %s started", appVersion)
+		// Логируем значение переменной TELE_TOKEN
+		log.Printf("TELE_TOKEN: %s", TeleToken)
 		kbot, err := telebot.NewBot(telebot.Settings{
 			URL:    "",
 			Token:  TeleToken,
